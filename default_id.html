@@ -4,8 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #header {
+            width: 800px;
+            margin: 0 auto;  
+            /* 나와 다른 태그 사이의 여백 margin: 상하 좌우; */
+            background: rgb(252, 156, 156);
+        }
+        #wrap {
+            width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #aside {
+            width: 200px;
+            float: left;
+            background: rgb(143, 193, 250);
+        }
+        #content {
+            width: 600px;
+            float: left;
+            background: rgb(195, 255, 195);
+        }
+    </style>
 </head>
 <body>
-    <div id="header"></div>
+    <div id="header">
+        <h1>#header 태그</h1>
+    </div>
+    <div id="wrap">
+        <div id="aside">
+            <h1>#aside 태그</h1>
+        </div>
+        <div id="content">
+            <h1>#content 태그</h1>
+        </div>
+    </div>
 </body>
 </html>
