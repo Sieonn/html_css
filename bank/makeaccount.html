@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .header{
+            text-align: center;
+        }
+      .container {
+        border: 1px solid black;
+        text-align: center;
+        float: console.error(object);
+      }
+      .title{
+        font-weight: bold;
+      }
+      .input {
+
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <div class="header"><h3>계좌 개설</h3></div>
+      <div class="container">
+        <div class="row">
+          <div class="title">계좌번호</div>
+          <div class="input"><input type="text" /></div>
+        </div>
+        <div class="row">
+          <div class="title">입금액</div>
+          <div class="input"><input type="text" /></div>
+        </div>
+        <div class="row">
+          <div class="title">종류</div>
+          <div class="input">
+            <input type="radio" name="type" checked />일반
+            <input type="radio" name="type" /> 특수
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">등급</div>
+          <div class="input">
+            <select name="grade" id="grade">
+              <option>VIP</option>
+              <option>GOLD</option>
+              <option>SILVER</option>
+              <option>NOMAL</option>
+            </select>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="개설" />
+        </div>
+    </form>
+  </body>
+</html>
