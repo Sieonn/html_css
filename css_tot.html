@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .body {
-        padding-left: 20%;
-        padding-right: 20%;
-        background-color: bisque;
+      @font-face {
+        font-family: "GmarketSansMedium";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff");
+      }
+
+      body {
+        font-family: "GmarketSansMedium";
       }
 
       .main-header {
@@ -24,16 +27,38 @@
       .inner-menu {
         display: none;
       }
-      .main-navigation {
-        float: left;
-        width: 60%;
+
+      #main-navigation {
+        border-top: 1px solid #000; /* Add top border */
+        border-bottom: 1px solid #000; /* Add bottom border */
+        padding: 10px 0; /* Add some padding for better spacing */
+        display: flex; /* Use flexbox for the navigation container */
+        justify-content: space-between; /* Distribute space between .pull-left and .pull-right */
       }
+
+      .outer-menu {
+        display: flex;
+        list-style: none;
+        padding: 0;
+      }
+
       .outer-menu-item {
-        float: left;
-        margin: 10px;
+        margin-right: 20px; /* Adjust the margin between menu items as needed */
       }
-      .pull {
-        float: right;
+
+      .pull-left {
+        display: flex;
+        align-items: center;
+      }
+
+      .search-bar {
+        text-align: right;
+      }
+
+      .pull-right {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 10px;
       }
     </style>
   </head>
