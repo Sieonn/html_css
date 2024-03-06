@@ -26,10 +26,7 @@
       .input {
         float: left;
       }
-      .button {
-        margin: 0 auto;
-        background-color: antiquewhite;
-      }
+
       input[type='submit'] {
         font-weight: bold;
         width: 120px;
@@ -39,6 +36,38 @@
       }
 
     </style>
+    <script>
+      window.onload = function(){
+        let select = document.querySelector("#grade");
+        let types = document.querySelectorAll("input[name='type']");
+        for(type of types) {
+          type.onclick = function() {
+            if(this.checked && this.value=='special') {
+              select.disabled = false;
+            } else {
+              select.disabled =true;
+            }
+          }
+        }
+        let form = document.forms[0];
+        form.onsubmit = function() {
+          let id = form.elements.id.value
+          let name = form.elements.name.value;
+          let balance = form.elements.balance.value;
+          //let type = form.elements.type.checked.value;
+          //let grade = form.elements.grade.selected.value;
+          let type = document.querySelector("input[name='type']:checked").value;
+          let grade = ''
+          if(type=='special'){
+            //grade = document.querySelector('#grade>option:checked').value
+            grade = document.querySelector('#grade').value;
+
+          }
+          console.log(`계좌번호:${id}, 이름:${name}, 잔액:${balance}, 종류:${type}, 등급:${grade}`);
+          return false;
+        }
+      }
+    </script>
   </head>
   <body>
     <form action="">
@@ -46,31 +75,33 @@
       <div class="container">
         <div class="row">
           <div class="title">계좌번호</div>
-          <div class="input"><input type="text" required/></div>
+          <div class="input"><input type="text" id ="id" name="name" required/></div>
         </div>
         <div class="row">
             <div class="title">이름</div>
-            <div class="input"><input type="text" required/></div>
+            <div class="input"><input type="text" id ="name"  name="name" required/></div>
           </div>
         <div class="row">
           <div class="title">입금액</div>
-          <div class="input"><input type="text" required/></div>
+          <div class="input"><input type="text" id ="balance" name="balance"
+            required/></div>
         </div>
         <div class="row">
           <div class="title">종류</div>
           <div class="input">
-            <input type="radio" name="type" checked />일반
-            <input type="radio" name="type" /> 특수
+            <input type="radio" name="type" checked value="normal"/>일반
+            <input type="radio" name="type" value="special" /> 특수
           </div>
         </div>
         <div class="row">
           <div class="title">등급</div>
           <div class="input">
-            <select name="grade" id="grade">
-              <option>VIP</option>
-              <option>GOLD</option>
-              <option>SILVER</option>
-              <option>NOMAL</option>
+            <select name="grade" id="grade" disabled>
+              <option>선택</option>
+              <option value="Vip">VIP</option>
+              <option value="Gold">GOLD</option>
+              <option value="Silver">SILVER</option>
+              <option value="Normal">NOMAL</option>
             </select>
           </div>
         </div>
